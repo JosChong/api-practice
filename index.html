@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Driver API</title>
+    <script type="text/javascript" src="../jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../angular.min.js"></script>
+    <script type="text/javascript" src="js/master.js"></script>
+  </head>
+  <body ng-app="myApp">
+    <div ng-controller="myController">
+      <table>
+        <thead>
+          <th><a ng-click="orderByMe('position', 1)">Position</a></th>
+          <th><a ng-click="orderByMe('givenName', 2)">Given Name</a></th>
+          <th><a ng-click="orderByMe('familyName', 3)">Family Name</a></th>
+          <th><a ng-click="orderByMe('dateOfBirth', 4)">Date of Birth</a></th>
+          <th><a ng-click="orderByMe('nationality', 5)">Nationalit</a>y</th>
+        </thead>
+        <tbody ng-repeat="driver in drivers | orderBy: myOrderBy">
+          <tr>
+            <td>{{driver.position}}</td>
+            <td>{{driver.givenName}}</td>
+            <td>{{driver.familyName}}</td>
+            <td>{{driver.dateOfBirth}}</td>
+            <td>{{driver.nationality}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
